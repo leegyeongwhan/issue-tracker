@@ -1,10 +1,9 @@
 package issuetracker.issuetracker.domain.label.dto;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import io.swagger.v3.oas.annotations.tags.Tags;
+import lombok.*;
 import org.springframework.data.annotation.Id;
+import org.springframework.data.relational.core.mapping.Column;
 
 import javax.validation.constraints.NotNull;
 
@@ -12,6 +11,7 @@ import javax.validation.constraints.NotNull;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@ToString
 public class LabelListDTO {
 
     @Id
@@ -20,6 +20,7 @@ public class LabelListDTO {
     @NotNull
     private String title;
     private String description;
+    @Column("font_color")
     private String fontColor;
     @NotNull
     private String backgroundColor;
